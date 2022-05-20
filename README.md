@@ -38,6 +38,7 @@ Many different things such as graphic charts and data tables were used in the pr
 <img src="https://i.hizliresim.com/irgpxsh.png" alt="Customer Inbox"/>
 <br/>
 <hr/>
+
 #### Admin Dashboard
 
 <h6>Product Index</h6>
