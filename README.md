@@ -53,8 +53,8 @@ Many different things such as graphic charts and data tables were used in the pr
 
 #### Links 
 <a href="https://www.udemy.com/course/mvconlineticariotomasyon/" >Course</a>
-<hr/>
 <a href="https://www.udemy.com/certificate/UC-a8fda63d-61b1-4452-adb5-7d5a99e31bd4/" >Certificate</a>
+<hr/>
 
 ## License
 
