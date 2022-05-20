@@ -27,7 +27,7 @@ Many different things such as graphic charts and data tables were used in the pr
 - Responsive Design
 
 
-## Photos
+## A Few Photos
 <h6>Login Page</h6>
 <img src="https://i.hizliresim.com/ion2fcc.png" alt="Login"/> 
 <br/><br/><br/>
