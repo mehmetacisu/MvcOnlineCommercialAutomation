@@ -1,0 +1,31 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.KargoDetay
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="text-center">Yeni Kargo Girişi</h4>
+
+<form method="post">
+    <div>
+
+        @Html.LabelFor(x => x.TakipKodu)
+        <input type="text" value="@ViewBag.TakipKodu" class="form-control" readonly="readonly" name="TakipKodu" />
+    </div>
+    @*@Html.TextBoxFor(x => x.TakipKodu, new { @class = "form-control mt-2" })*@
+
+    @Html.LabelFor(x => x.Personel)
+    @Html.TextBoxFor(x => x.Personel, new { @class = "form-control mt-2" })
+
+    @Html.LabelFor(x => x.Alici)
+    @Html.TextBoxFor(x => x.Alici, new { @class = "form-control mt-2" })
+
+    @Html.LabelFor(x => x.Tarih)
+    @*<input class="form-control" type="datetime-local" name="Tarih" />*@
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @type = "datetime-local", @required = "required" })
+
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control mt-2" })
+
+    <button class="btn btn-success mt-2">Kaydet</button>
+</form>

@@ -1,0 +1,33 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Urun
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-center mt-2 text-warning">Ürün Ekleme Formu</h2>
+<form method="post">
+    <div>
+        @Html.LabelFor(x => x.Ad)
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Marka, new { @class = "mt-2" })
+        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Stok, new { @class = "mt-2" })
+        @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.AlisFiyat, new { @class = "mt-2" })
+        @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.SatisFiyat, new { @class = "mt-2" })
+        @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Kategori, new { @class = "mt-2" })
+        @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.ktg, new { @class = "form-select" })
+
+        @Html.LabelFor(x => x.Fotograf, new { @class = "mt-2" })
+        @Html.TextBoxFor(x => x.Fotograf, new { @class = "form-control" })
+        <button class="btn btn-warning mt-2">Kaydet</button>
+    </div>
+</form>

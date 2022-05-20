@@ -1,0 +1,33 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Fatura
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h4 class="text-center text-warning mt-2">Fatura Oluşturma Formu</h4>
+<form method="post">
+    @Html.LabelFor(x => x.SeriNo)
+    @Html.TextBoxFor(x => x.SeriNo, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.SiraNo)
+    @Html.TextBoxFor(x => x.SiraNo, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.VergiDairesi)
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.TeslimEden)
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.TeslimAlan)
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control mb-2" })
+
+    <button class="btn btn-success mt-2">Kaydet</button>
+</form>

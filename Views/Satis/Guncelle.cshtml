@@ -1,0 +1,35 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.SatisHareket
+
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+{
+<div>
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.LabelFor(x => x.Cari, new { @class = "mt-2" })
+    @Html.DropDownListFor(x => x.CariID, (List<SelectListItem>)ViewBag.cari, new { @class = "form-select" })
+
+    @Html.LabelFor(x => x.Personel, new { @class = "mt-2" })
+    @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.personel, new { @class = "form-select" })
+
+    @Html.LabelFor(x => x.Urun, new { @class = "mt-2" })
+    @Html.DropDownListFor(x => x.UrunID, (List<SelectListItem>)ViewBag.urun, new { @class = "form-select" })
+
+    @Html.LabelFor(x => x.Adet, new { @class = "mt-2" })
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Fiyat, new { @class = "mt-2" })
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Tutar, new { @class = "mt-2" })
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+
+    <button class="btn btn-success mt-2">Güncelle</button>
+</div>
+}
+
+

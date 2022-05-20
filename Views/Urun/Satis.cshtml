@@ -1,0 +1,41 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "Satis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 class="text-center mt-2 text-warning">Satış Formu</h2>
+<form method="post">
+    <div>
+        @Html.LabelFor(x => x.UrunID)
+        <input type="text" name="UrunID" value="@ViewBag.Id" class="form-control" readonly="readonly" />
+        @Html.LabelFor(x => x.PersonelID, new { @class = "mt-2" })
+        @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.personel, new { @class = "form-select mb-2" })
+
+        @Html.LabelFor(x => x.CariID, new { @class = "mt-2" })
+        @Html.TextBoxFor(x => x.CariID, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Adet, new { @class = "mt-2" })
+        <input type="number" name="Adet" class="form-control" min="1" max="10" placeholder="Adet Seçiniz" id="textAdet" onchange="sum();" />
+
+        @Html.LabelFor(x => x.Fiyat, new { @class = "mt-2" })
+        <input type="text" name="Fiyat" value="@ViewBag.urunFiyat" class="form-control" id="textFiyat" onkeyup="sum();" />
+
+
+        @Html.LabelFor(x => x.Tutar, new { @class = "mt-2" })
+        <input type="text" name="Tutar" class="form-control" value="0" readonly="readonly" id="textTutar" />
+
+
+        <button class="btn btn-warning mt-2">Satış Yap</button>
+    </div>
+</form>
+
+<script>
+    function sum() {
+        var adet = document.getElementById('textAdet').value;
+        var fiyat = document.getElementById('textFiyat').value;
+        var tutar = parseInt(adet) * parseInt(fiyat);
+        if (!isNaN(tutar)) {
+            document.getElementById('textTutar').value = tutar;
+        }
+    }
+</script>

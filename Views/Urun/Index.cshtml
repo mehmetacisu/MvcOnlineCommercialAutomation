@@ -1,0 +1,43 @@
+﻿@using MvcTicariOtomasyon.Models.Siniflar
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+{
+    <p class="mt-2">
+        Ürün Adı : @Html.TextBox("ara")
+        <input type="submit" value="Ara" class="btn btn-outline-info" />
+    </p>
+}
+
+<table class="table table-bordered mt-2">
+    <tr>
+        <th>Ad</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Satış Yap</th>
+    </tr>
+    @foreach (var urun in Model)
+    {
+        <tr>
+            <td>@urun.Ad</td>
+            <td>@urun.Marka</td>
+            <td>@urun.Stok</td>
+            <td>@urun.AlisFiyat₺</td>
+            <td>@urun.SatisFiyat₺</td>
+            <td>@urun.Kategori.Ad</td>
+            <td><a href="/Urun/Sil/@urun.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Urun/Guncelle/@urun.Id" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Urun/Satis/@urun.Id" class="btn btn-primary">Satış Yap</a></td>
+        </tr>
+    }
+</table>
+<a href="/Urun/Ekle" class="btn btn-success">Ürün Ekle</a>

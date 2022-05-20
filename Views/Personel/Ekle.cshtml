@@ -1,0 +1,29 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Personel
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="text-center text-warning mt-2">Personel Ekleme Formu</h4>
+@using (Html.BeginForm("Ekle", "Personel", FormMethod.Post,new {enctype="multipart/form-data"}))
+{
+<form method="post">
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control mb-2" })
+
+
+    @Html.LabelFor(x => x.Fotograf)
+    @*@Html.TextBoxFor(x => x.Fotograf, new { @class = "form-control mb-2" })*@
+    <input type="file" name="Fotograf" class="form-control" />
+
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.Departman, new { @class = "form-select mb-2" })
+
+
+    <button class="btn btn-success mt-2">Kaydet</button>
+</form>
+}

@@ -1,0 +1,31 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div>
+    @Html.HiddenFor(x => x.Id)
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+
+    <img src="@ViewBag.Foto" width="250" height="250" class="m-2" />
+
+    <br />
+    @Html.LabelFor(x => x.Fotograf)
+
+    <input type="file" name="Fotograf" class="form-control" />
+
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.Departman, new { @class = "form-select mb-2" })
+
+
+    <button class="btn btn-warning mt-2">Güncelle</button>
+</div>
+}
+

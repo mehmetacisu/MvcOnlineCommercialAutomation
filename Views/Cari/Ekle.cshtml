@@ -1,0 +1,21 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Cari
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="text-center text-success">Cari Ekleme Formu</h4>
+
+<form method="post">
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new {@class="form-control" })
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control mt-2" })
+    @Html.LabelFor(x => x.Sehir)
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control mt-2" })
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control mt-2" })
+
+    <button class="btn btn-success mt-2">Kaydet</button>
+</form>

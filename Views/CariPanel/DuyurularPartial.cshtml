@@ -1,0 +1,22 @@
+﻿@using MvcTicariOtomasyon.Models.Siniflar
+@model List<Mesajlar>
+@foreach (var duyuru in Model)
+{
+    <div class="timeline timeline-inverse">
+        <div class="time-label">
+            <span class="bg-warning">
+                @duyuru.Tarih.ToString("dd.MM.yyyy")
+            </span>
+        </div>
+        <div>
+            <i class="fas fa-envelope bg-primary"></i>
+            <div class="timeline-item">
+                <span class="time"><i class="far fa-clock"></i>@duyuru.Tarih.ToString("HH:mm")</span>
+                <h3 class="timeline-header">@duyuru.Gonderici</h3>
+                <div class="timeline-body">
+                 @duyuru.Icerik
+                </div>
+            </div>
+        </div>
+    </div>
+}

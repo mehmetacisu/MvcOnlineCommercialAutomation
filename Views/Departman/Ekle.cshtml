@@ -1,0 +1,14 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Departman
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-center mt-2 text-success">Departman Ekleme Formu</h2>
+<form method="post">
+    @Html.LabelFor(x=>x.Ad)
+    @Html.TextBoxFor(x=>x.Ad,new {@class="form-control mb-2"})
+
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

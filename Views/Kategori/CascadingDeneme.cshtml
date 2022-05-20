@@ -1,0 +1,39 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Cascading
+
+@{
+    ViewBag.Title = "CascadingDeneme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $('#DDLKategori').change(function () {
+            var id = $('#DDLKategori').val();
+            $.ajax({
+                url: '/Kategori/UrunGetir',
+                data: { ktgID: id },
+                type: "POST",
+                dataType: "Json",
+                success: function (data) {
+                    $('#DDLUrunler').empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $('#DDLUrunler').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<div>
+    <h3>Kategoriler - Ürünler</h3>
+</div>
+<div>
+    @Html.Label("Kategoriler")
+    @Html.DropDownList("DDLKategori", Model.Kategoriler, "---Kategori Seçiniz", new
+{ @class = "form-select" })
+    <br />
+    @Html.Label("Ürünler")
+    @Html.DropDownList("DDLUrunler",Model.Urunler,"---Ürün Seçiniz",new
+{@class = "form-select"})
+</div>

@@ -1,0 +1,32 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "Yap";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h4 class="text-center text-success">Satış Formu</h4>
+<form method="post">
+    @Html.LabelFor(x => x.Urun)
+    @Html.DropDownListFor(x => x.UrunID, (List<SelectListItem>)ViewBag.urun, new { @class = "form-select mb-2" })
+
+    @Html.LabelFor(x => x.Cari)
+    @Html.DropDownListFor(x => x.CariID, (List<SelectListItem>)ViewBag.cari, new { @class = "form-select mb-2" })
+
+    @Html.LabelFor(x => x.Personel)
+    @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.personel, new { @class = "form-select mb-2" })
+
+    @Html.LabelFor(x => x.Adet)
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control mb-2" })
+
+
+    @Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control mb-2" })
+
+
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+
+
+    <button class="btn btn-success mt-2">Satış Yap</button>
+</form>

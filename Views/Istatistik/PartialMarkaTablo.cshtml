@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MvcTicariOtomasyon.Models.Siniflar.SinifGrup3>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Marka Ürün Bilgileri</h3>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Marka</th>
+                    <th>Progress Bar</th>
+                    <th style="width: 40px">Toplam</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int siraNo = 0; }
+                @foreach (var marka in Model)
+                {
+                    <tr>
+                        <td>@{siraNo++;} @siraNo</td>
+                        <td>@marka.Marka</td>
+                        <td>
+                            @if (marka.Sayi >= 1 && marka.Sayi<=3)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-danger" style="width: 55%"></div>
+                                </div>
+                            }
+                            @if (marka.Sayi >=4 && marka.Sayi <=6)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-warning" style="width: 55%"></div>
+                                </div>
+                            }
+                            @if (marka.Sayi >=7)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-indigo" style="width: 55%"></div>
+                                </div>
+                            }
+                        </td>
+                        <td>
+                            @if (marka.Sayi >= 1 && marka.Sayi <= 3)
+                            {
+                                <span class="badge bg-danger">@marka.Sayi</span>
+                            }
+                            @if (marka.Sayi >= 4 && marka.Sayi <= 6)
+                            {
+                                <span class="badge bg-warning">@marka.Sayi</span>
+                            }
+                            @if (marka.Sayi >= 7)
+                            {
+                                <span class="badge bg-indigo">@marka.Sayi</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

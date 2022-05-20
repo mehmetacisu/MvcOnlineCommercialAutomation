@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index6";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Result Visualization</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeUrunResultDB", "Grafik")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        });
+        function drawChart(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Stoklar');
+            var dataArray = [];
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.Urn, obj.Stk]);
+            });
+            data.addRows(dataArray);
+            var columnChartOptions = {
+                title: "Ürün Stok Grafiği",
+                width: 1200,
+                height: 800,
+                bar: { groupWidth: "20%" },
+            };
+            var columnChart = new google.visualization.LineChart(document
+                .getElementById('linechart_div'));
+            columnChart.draw(data, columnChartOptions);
+        }
+    </script>
+</head>
+<body>
+    <div id="linechart_div"></div>
+    @*<a href="@Url.Action("PieChart")" class="btn btn-danger">Pie Chart</a>
+        <a href="@Url.Action("ColumnChart")" class="active btn btn-primary">Column Chart</a>
+        <a href="@Url.Action("LineChart")" class="btn btn-warning">Line Chart</a>*@
+</body>
+</html>
+
+

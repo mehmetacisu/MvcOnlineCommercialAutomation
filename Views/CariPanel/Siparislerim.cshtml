@@ -1,0 +1,27 @@
+﻿@using MvcTicariOtomasyon.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "Siparislerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+
+<h4 class="text-center text-warning">Siparişlerim</h4>
+
+<table class="table table-striped">
+<tr>
+    <th>Ürün Adı</th>
+    <th>Birim Fiyat</th>
+    <th>Toplam Tutar</th>
+    <th>Tarih</th>
+</tr>
+    @foreach (var siparis in Model)
+    {
+        <tr>
+            <td>@siparis.Urun.Marka @siparis.Urun.Ad</td>
+            <td>@siparis.Fiyat</td>
+            <td>@siparis.Tutar</td>
+            <td>@siparis.Tarih.ToString("dd/MM/yyy")</td>
+        </tr>
+    }
+</table>

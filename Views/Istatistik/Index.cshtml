@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/css/StyleSheet1.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="total-content">
+        <div class="list_of_members">
+            <div class="sales" style="background-color:#1abc9c">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamCari</h3>
+                    <p>Toplam Cari</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="new-users" style="background-color:#2ecc71">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamUrun</h3>
+                    <p>Ürün Sayısı</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="orders" style="background-color:#3498db">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamPersonel</h3>
+                    <p>Personel Sayısı</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="visitors" style="background-color:#9b59b6">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamKategori</h3>
+                    <p>Kategori Sayısı</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="total-content">
+        <div class="list_of_members">
+            <div class="sales" style="background-color:#16a085">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamStok</h3>
+                    <p>Toplam Stok</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="new-users" style="background-color:#27ae60">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamMarka</h3>
+                    <p>Marka Sayısı</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="orders" style="background-color:#2980b9">
+                <div class="icon-text">
+                    <h3>@ViewBag.kritik</h3>
+                    <p>Kritik Seviye</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="visitors" style="background-color:#8e44ad">
+                <div class="icon-text">
+                    <h3>@ViewBag.UrunPahali</h3>
+                    <p>Max Fiyatlı Ürün</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="total-content">
+        <div class="list_of_members">
+            <div class="sales" style="background-color:#f1c40f">
+                <div class="icon-text">
+                    <h3>@ViewBag.UrunUcuz</h3>
+                    <p>Min Fiyatlı Ürün</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="new-users" style="background-color:#e67e22">
+                <div class="icon-text">
+                    <h3>@ViewBag.MarkaMax</h3>
+                    <p>Max Marka</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="orders" style="background-color:#e74c3c">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamBuzdolabi</h3>
+                    <p>Buzdolabı Sayısı</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="visitors" style="background-color:#95a5a6">
+                <div class="icon-text">
+                    <h3>@ViewBag.toplamLaptop</h3>
+                    <p>Laptop Sayısı</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="total-content">
+        <div class="list_of_members">
+            <div class="sales" style="background-color:#f39c12">
+                <div class="icon-text">
+                    <h3>@ViewBag.cokSatan</h3>
+                    <p>En Çok Satan</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="new-users" style="background-color:#d35400">
+                <div class="icon-text">
+                    <h3>@ViewBag.kasaToplam</h3>
+                    <p>Kasadaki Tutar</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="orders" style="background-color:#c0392b">
+                <div class="icon-text">
+                    <h3>@ViewBag.bugunSatisToplam</h3>
+                    <p>Bugünkü Satşlar</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="visitors" style="background-color:#7f8c8d">
+                <div class="icon-text">
+                    <h3>@ViewBag.bugunkuKasaToplami</h3>
+                    <p>Bugünkü Kasa</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>

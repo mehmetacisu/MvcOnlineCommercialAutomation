@@ -1,0 +1,28 @@
+﻿@model MvcTicariOtomasyon.Models.Siniflar.Cari
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="mt-2">Cari Güncelleme Formu</h3>
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+<div>
+    @Html.HiddenFor(x => x.Id)
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control mt-2" })
+    @Html.ValidationMessageFor(x => x.Ad, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(x => x.Soyad)
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control mt-2" })
+    @Html.ValidationMessageFor(x => x.Soyad, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control mt-2" })
+
+    @Html.LabelFor(x => x.Sehir)
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control mt-2" })
+
+    <button class="btn btn-success mt-2">Güncelle</button>
+</div>
+}
